@@ -1,0 +1,15 @@
+---
+- name: mi primer playbook
+  hosts: fhw
+  become: yes
+
+  tasks:
+    - name: Asegurarse que apache está en la última versión
+      apt: 
+        name: apache2 
+        state: present
+    - name: Asegurarse que apache está ejecutándose
+      service: 
+        name: apache2 
+        state: started
+...
